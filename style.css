@@ -1,0 +1,16 @@
+html,body{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.date{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 50px;
+    font-weight: bold;
+    background-image: url(./img/gif-heart-78.gif);
+    background-position-y: 70px;
+}
