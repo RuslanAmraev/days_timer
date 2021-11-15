@@ -8,7 +8,7 @@ function setDate(){
     let hours = Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000*60*60));
     let minutes = Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000*60));
     let seconds = Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000));
-    box.innerHTML = days + ' дней ' + (hours-(days*24)) + ' часов ' + (minutes-(hours*60)) + ' минут ' + (seconds-(minutes * 60)) + ' секунд'
+    box.innerHTML = Number(days) + ' дней ' + Number(hours-(days*24)) + ' часов ' + Number(minutes-(hours*60)) + ' минут ' + Number(seconds-(minutes * 60)) + ' секунд'
 }
 
 setDate()
