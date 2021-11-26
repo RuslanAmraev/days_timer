@@ -3,7 +3,7 @@ const box = document.getElementById('date')
 const dayOfBeginningOfaRelationship = '26'
 const monthOfBeginningOfaRelationship = '10'
 const yearOfBeginningOfaRelationship = '2021'
-const theBeginningOfaRelationship = new Date ('2021, 10, 26 00:30:00');
+const theBeginningOfaRelationship = new Date ('2021, 10, 26 00:30:00'.replace(/\s/, 'T'));
 
 function setDate(){
     let today = new Date ();
