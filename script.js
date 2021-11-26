@@ -8,10 +8,15 @@ const theBeginningOfaRelationship = new Date ('2021, 10, 26 00:30:00');
 
 function setDate(){
     let today = new Date ();
-    let days = parseInt(Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000*60*60*24)));
-    let hours = parseInt(Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000*60*60)));
-    let minutes = parseInt(Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000*60)));
-    let seconds = parseInt(Math.floor((today.getTime() - theBeginningOfaRelationship.getTime())/(1000)));
+    let days = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000*60*60*24)));
+    let hours = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000*60*60)));
+    let minutes = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000*60)));
+    let seconds = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000)));
+
+    console.log(today, ' today ')
+    console.log(days, ' days ')
+    console.log(hours, ' hours ')
+    console.log(minutes, ' minutes ')
 
     let pureHours = hours-(days*24)
     let pureMinutes = minutes-(hours*60)
