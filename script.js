@@ -12,7 +12,7 @@ const monthsWord = [' месяц ', ' месяца ', ' месяцев ']
 const secondsWord = [' секунда ', ' секунды ', ' секунд ']
 
 function word(num, arr){
-    let tmp = num.toString().split('').at(-1)
+    let tmp = num.toString().split('').reverse()[0]
     if(tmp == 1 && num != 11){
         return(arr[0])
     }else if (tmp == 2 || tmp == 3 || tmp == 4 && num.length < 2){
