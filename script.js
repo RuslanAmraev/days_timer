@@ -5,21 +5,29 @@ const monthOfBeginningOfaRelationship = '10'
 const yearOfBeginningOfaRelationship = '2021'
 const theBeginningOfaRelationship = new Date ('2021-10-26 00:30:00'.replace(/\s/, 'T'));
 
+const daysWord = [' день ', ' дня ', ' дней ']
+const hoursWord = [' час ', ' часа ', ' часов ']
+const minutesWord = [' минута ',' минуты ', ' минут ' ]
+const monthsWord = [' месяц ', ' месяца ', ' месяцев ']
+const secondsWord = [' секунда ', ' секунды ', ' секунд ']
+
+function word(num, arr){
+    let tmp = num.toString().split('').at(-1)
+    if(tmp == 1 && num != 11){
+        return(arr[0])
+    }else if (tmp == 2 || tmp == 3 || tmp == 4 && num.length < 2){
+        return(arr[1])
+    }else{
+        return(arr[2])
+    }   
+}
+
 function setDate(){
-    let today = new Date ();
+    let today = new Date();
     let days = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000*60*60*24)));
     let hours = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime())))/(1000*60*60));
     let minutes = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000*60)));
     let seconds = parseInt(Math.floor((parseInt(today.getTime()) - parseInt(theBeginningOfaRelationship.getTime()))/(1000)));
-
-    console.log(today, ' today ')
-    console.log(days, ' days ')
-    console.log(hours, ' hours ')
-    console.log(minutes, ' minutes ')
-
-    console.log(today.getTime(), ' today.getTime ')
-    console.log(theBeginningOfaRelationship.getTime(), ' theBeginningOfaRelationship.getTime ')
-
 
     let pureHours = hours-(days*24)
     let pureMinutes = minutes-(hours*60)
@@ -27,13 +35,22 @@ function setDate(){
 
     let pureMonths = ''
 
-    // if(
-    //     today.getDate() >= dayOfBeginningOfaRelationship-0
-    // ){
-    //     pureMonths = today.getMonth() - (monthOfBeginningOfaRelationship-0) + 'месяц '
-    // }
+   function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
 
-    box.innerHTML = pureMonths.concat(days, ' дней ', pureHours, ' часов ', pureMinutes, ' минут ', pureSeconds, ' секунд')
+    if(today.getDate() >= theBeginningOfaRelationship.getDate()){
+        pureMonths = monthDiff(theBeginningOfaRelationship, today).toString().concat('  месяц ')
+        days = today.getDate() - theBeginningOfaRelationship.getDate()
+    }else if(today.getDate() < theBeginningOfaRelationship.getDate()){
+        days = new Date(today.getFullYear(), today.getMonth() - 1, 0).getDate() - theBeginningOfaRelationship.getDate() + today.getDate()
+    }
+
+    box.innerHTML = pureMonths.concat(days, word(days, daysWord), pureHours, word(pureHours, hoursWord), pureMinutes, word(pureMinutes, minutesWord), pureSeconds, word(pureSeconds,secondsWord))
 }
 
 setDate()
