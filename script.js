@@ -47,10 +47,11 @@ function setDate(){
         pureMonths = monthDiff(theBeginningOfaRelationship, today).toString().concat('  месяц ')
         days = today.getDate() - theBeginningOfaRelationship.getDate()
     }else if(today.getDate() < theBeginningOfaRelationship.getDate()){
+        pureMonths = (monthDiff(theBeginningOfaRelationship, today)-1).toString().concat('  месяц ')
         days = new Date(today.getFullYear(), today.getMonth() - 1, 0).getDate() - theBeginningOfaRelationship.getDate() + today.getDate()
     }
 
-    box.innerHTML = pureMonths.concat(days, word(days, daysWord), pureHours, word(pureHours, hoursWord), pureMinutes, word(pureMinutes, minutesWord), pureSeconds, word(pureSeconds,secondsWord))
+    box.innerHTML = pureMonths.concat(window.innerWidth < 600 ? '<br>': '', days, word(days, daysWord),window.innerWidth < 600 ? '<br>': '', pureHours, word(pureHours, hoursWord),window.innerWidth < 600 ? '<br>': '', pureMinutes, word(pureMinutes, minutesWord),window.innerWidth < 600 ? '<br>': '', pureSeconds, word(pureSeconds,secondsWord))
 }
 
 setDate()
