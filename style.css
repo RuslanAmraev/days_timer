@@ -7,25 +7,43 @@ html,body{
     overflow: hidden;
 }
 
+.wrapper{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./img/gif-heart-78.gif);
+    background-position-y: 70px;
+    position: relative;
+}
+
 .date{
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
     text-align: center;
     height: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
-    font-size: 50px;
+    font-size: 5vh;
     font-weight: bold;
-    background-image: url(./img/gif-heart-78.gif);
-    background-position-y: 70px;
     font-family: 'Caveat', cursive;
 }
 
 .santa-box{
     position: absolute;
-    bottom: -10px;
-    right: -150px;
+    right: 0;
+    bottom: 0;
 }
 
 .santa-1{
     display: none;
+}
+
+.santa-2{
+    z-index: 1;
+    position: absolute;
+    width: 40vh;
+    bottom: 0;
+    right: -60px;
 }
