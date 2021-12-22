@@ -56,3 +56,16 @@ function setDate(){
 
 setDate()
 setInterval(setDate, 1000)
+
+document.getElementsByClassName('santa-2')[0].addEventListener('click', ()=>{
+    document.getElementsByClassName('santa-1')[0].style.display = 'block'
+    document.getElementsByClassName('santa-2')[0].style.display = 'none'
+    document.getElementsByClassName('santa-box')[0].style.right = '0'
+    document.getElementsByClassName('santa-box')[0].style.bottom = '0'
+})
+
+document.getElementsByClassName('santa-1')[0].addEventListener('click', ()=>{
+    document.getElementsByClassName('santa-2')[0].style.display = 'block'
+    document.getElementsByClassName('santa-1')[0].style.display = 'none'
+    document.getElementsByClassName('santa-box')[0].style.right = '-150px'
+})
