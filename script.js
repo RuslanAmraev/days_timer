@@ -86,9 +86,11 @@ function moveDragon(){
             if(point < 0){
                 point = 700
                 dragon.style.transform = 'scaleX(-1)'
+                dragon.style.top = Math.random() * (60 - 10) + 10 + '%';
             }else{
                 point = -700
                 dragon.style.transform = 'scaleX(1)'
+                dragon.style.top = Math.random() * (60 - 10) + 10 + '%';
             }
         }
     }

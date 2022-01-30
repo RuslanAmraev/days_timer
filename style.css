@@ -77,6 +77,6 @@ html,body{
     width: 500px;
     left: 500px;
     transition: 40ms;
-    top: 0;
+    top: 60%;
     z-index: 1;
 }
