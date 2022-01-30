@@ -97,4 +97,4 @@ function moveDragon(){
 
 setInterval(() => {
     moveDragon()
-}, 10);
+}, 1);
