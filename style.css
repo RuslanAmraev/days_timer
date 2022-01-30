@@ -28,6 +28,7 @@ html,body{
     font-size: 5vh;
     font-weight: bold;
     font-family: 'Caveat', cursive;
+    z-index: 5;
 }
 
 .santa-box{
@@ -46,4 +47,36 @@ html,body{
     width: 40vh;
     bottom: 0;
     right: -60px;
+}
+
+.video{
+    width: 100vw;
+    height: 1000px;
+    position: absolute;
+    z-index: 1;
+}
+
+.img7{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    width: 350px;
+    z-index: 2;
+}
+
+.img1{
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100px;
+}
+
+.img4{
+    position: absolute;
+    width: 500px;
+    left: 500px;
+    transition: 40ms;
+    top: 0;
+    z-index: 1;
 }

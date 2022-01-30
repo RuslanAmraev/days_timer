@@ -57,12 +57,44 @@ function setDate(){
 setDate()
 setInterval(setDate, 1000)
 
-document.getElementsByClassName('santa-2')[0].addEventListener('click', ()=>{
-    document.getElementsByClassName('santa-1')[0].style.display = 'block'
-    document.getElementsByClassName('santa-2')[0].style.display = 'none'
-})
+// document.getElementsByClassName('santa-2')[0].addEventListener('click', ()=>{
+//     document.getElementsByClassName('santa-1')[0].style.display = 'block'
+//     document.getElementsByClassName('santa-2')[0].style.display = 'none'
+// })
 
-document.getElementsByClassName('santa-1')[0].addEventListener('click', ()=>{
-    document.getElementsByClassName('santa-2')[0].style.display = 'block'
-    document.getElementsByClassName('santa-1')[0].style.display = 'none'
-})
+// document.getElementsByClassName('santa-1')[0].addEventListener('click', ()=>{
+//     document.getElementsByClassName('santa-2')[0].style.display = 'block'
+//     document.getElementsByClassName('santa-1')[0].style.display = 'none'
+// })
+
+
+let dragon = document.getElementById('dragon')
+
+let point = -700
+
+function moveDragon(){
+    if(isNaN(parseInt(dragon.style.left.split('p')[0]))){
+        dragon.style.left = 500 + 'px'
+    }else{
+        if(parseInt(dragon.style.left.split('p')[0]) != point){
+            if(point > 0){
+                dragon.style.left = parseInt(dragon.style.left.split('p')[0]) + 1 + 'px'
+            }else{
+                dragon.style.left = parseInt(dragon.style.left.split('p')[0]) - 1 + 'px'
+            }
+        }else{
+            if(point < 0){
+                point = 700
+                dragon.style.transform = 'scaleX(-1)'
+            }else{
+                point = -700
+                dragon.style.transform = 'scaleX(1)'
+            }
+        }
+    }
+}
+
+
+setInterval(() => {
+    moveDragon()
+}, 10);
