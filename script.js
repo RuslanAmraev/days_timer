@@ -8,7 +8,7 @@ const theBeginningOfaRelationship = new Date ('2021-10-26 00:30:00'.replace(/\s/
 const daysWord = [' день ', ' дня ', ' дней ']
 const hoursWord = [' час ', ' часа ', ' часов ']
 const minutesWord = [' минута ',' минуты ', ' минут ' ]
-const monthsWord = [' месяц ', ' месяца ', ' месяцев ']
+const monthsWord = [' месяца ', ' месяца ', ' месяцев ']
 const secondsWord = [' секунда ', ' секунды ', ' секунд ']
 
 function word(num, arr){
@@ -44,10 +44,10 @@ function setDate(){
 }
 
     if(today.getDate() >= theBeginningOfaRelationship.getDate()){
-        pureMonths = monthDiff(theBeginningOfaRelationship, today).toString().concat('  месяц ')
+        pureMonths = monthDiff(theBeginningOfaRelationship, today).toString().concat('  месяца ')
         days = today.getDate() - theBeginningOfaRelationship.getDate()
     }else if(today.getDate() < theBeginningOfaRelationship.getDate()){
-        pureMonths = (monthDiff(theBeginningOfaRelationship, today)-1).toString().concat('  месяц ')
+        pureMonths = (monthDiff(theBeginningOfaRelationship, today)-1).toString().concat('  месяца ')
         days = new Date(today.getFullYear(), today.getMonth() - 1, 0).getDate() - theBeginningOfaRelationship.getDate() + today.getDate()
     }
 
