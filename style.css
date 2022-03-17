@@ -11,8 +11,8 @@ html,body{
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-image: url(./img/gif-heart-78.gif);
-    background-position-y: 70px;
+    /* background-image: url(./img/gif-heart-78.gif); */
+    /* background-position-y: 70px; */
     position: relative;
 }
 
