@@ -70,7 +70,7 @@ setInterval(setDate, 1000)
 
 let dragon = document.getElementById('dragon')
 
-let point = -700
+let point = window.innerWidth * -1
 
 function moveDragon(){
     if(isNaN(parseInt(dragon.style.left.split('p')[0]))){
@@ -84,12 +84,12 @@ function moveDragon(){
             }
         }else{
             if(point < 0){
-                point = 700
-                dragon.style.transform = 'scaleX(-1)'
+                point = window.innerWidth + 400
+                dragon.style.transform = 'scaleX(1)'
                 dragon.style.top = Math.random() * (60 - 10) + 10 + '%';
             }else{
-                point = -700
-                dragon.style.transform = 'scaleX(1)'
+                point = (window.innerWidth + 400) * -1
+                dragon.style.transform = 'scaleX(-1)'
                 dragon.style.top = Math.random() * (60 - 10) + 10 + '%';
             }
         }
@@ -100,3 +100,4 @@ function moveDragon(){
 setInterval(() => {
     moveDragon()
 }, 1);
+

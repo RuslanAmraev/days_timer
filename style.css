@@ -31,7 +31,7 @@ html,body{
     z-index: 5;
 }
 
-.santa-box{
+/* .santa-box{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -79,4 +79,32 @@ html,body{
     transition: 40ms;
     top: 60%;
     z-index: 1;
+} */
+
+.img{
+    width: 100px;
 }
+
+.flowers{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translatex(-50%);
+    width: 250px;
+}
+
+.sun{
+    position: absolute;
+    right: 3%;
+    top: 1%;
+}
+
+.bee{
+    transform: scaleX(-1);
+    position: absolute;
+    width: 80px;
+    transition: 40ms;
+    top: 60%;
+    z-index: 1;
+}
+
